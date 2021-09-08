@@ -1,13 +1,48 @@
 ---
 #ipv6_prefix: "2001:bf7:860::/56" !anpassen!!
 
-# Mesh: 10.31.83.60/30
 networks:
-  #- vid: 10
-  #  role: mesh
-  #  name: mesh_sama
-  #  prefix: 10.31.83.60/32
-  #  ipv6_subprefix: -1
+
+  - vid: 10
+    role: mesh
+    name: mesh_nno
+    prefix: 10.30.96.43/32
+    #ipv6_subprefix: -1
+    mesh_metric: 1024
+    mesh_ap: lebenshilfe-nno-ap-2ghz
+    mesh_radio: 11g_standard
+    mesh_iface: mesh_fw
+
+  - vid: 11
+    role: mesh
+    name: mesh_nw
+    prefix: 10.30.96.44/32
+    #ipv6_subprefix: -2
+    mesh_metric: 1024
+    mesh_ap: lebenshilfe-nw-ap-2ghz
+    mesh_radio: 11g_standard
+    mesh_iface: mesh_fw
+
+  - vid: 12
+    role: mesh
+    name: mesh_sso
+    prefix: 10.30.96.45/32
+    #ipv6_subprefix: -3
+    mesh_metric: 1024
+    mesh_ap: lebenshilfe-sso-ap-2ghz
+    mesh_radio: 11g_standard
+    mesh_iface: mesh_fw
+
+  - vid: 13
+    role: mesh
+    name: mesh_oso
+    prefix: 10.30.96.46/32
+    #ipv6_subprefix: -4
+    mesh_metric: 1024
+    mesh_ap: lebenshilfe-oso-ap-2ghz
+    mesh_radio: 11g_standard
+    mesh_iface: mesh_fw
+
 
   - vid: 42
     role: mgmt
@@ -30,7 +65,7 @@ networks:
     assignments:
       lebenshilfe-core: 1
 
-location__channel_assignments_11a_standard__to_merge:
+location__channel_assignments_11g_standard__to_merge:
   # ap-name: Channel  Bandwidth  tx-Power
   lebenshilfe-nno-ap-2ghz: 1-20-15
   lebenshilfe-nw-ap-2ghz: 6-20-15
