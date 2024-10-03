@@ -178,6 +178,17 @@ networks:
       gub37-emma: 11
       gub37-sama: 12
 
+  # This is a silly workaround to allow vlan800
+  # to not be filtered out and to be passed to all
+  # switch ports
+  - vid: 800
+    role: none
+    name: meshtastic
+    prefix: 127.0.0.0/30
+    assignments:
+      gub37-core: 1
+
+
 location__channel_assignments_11a_standard__to_merge:
   gub37-hof-s: 36-80-11
   gub37-hof-w: 36-80-8
