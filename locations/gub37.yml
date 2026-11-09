@@ -19,6 +19,8 @@ hosts:
     wireless_profile: freifunk_default
     wifi_roaming: true
     flow_offload: hw
+    imagebuilder_standalone: true
+    imagebuilder: "/home/robertfoss/tmp/openwrt-flint3/bin/targets/qualcommbe/ipq53xx/openwrt-imagebuilder-qualcommbe-ipq53xx.Linux-x86_64.tar.zst"
 
   - hostname: gub37-hof-s
     role: ap
